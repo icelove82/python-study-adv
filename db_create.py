@@ -29,6 +29,19 @@ try:
 except Exception as err:
     print(err)
 
+try:
+    db.execute("""
+        create table customers
+        (
+            ID   int auto_increment
+                primary key,
+            NAME varchar(225),
+            ADDRESS  varchar(225)
+        )
+    """)
+except Exception as err:
+    print(err)
+
 # 5. Show tables
 db.execute('SHOW TABLES')
 print('***** Table List *****')
